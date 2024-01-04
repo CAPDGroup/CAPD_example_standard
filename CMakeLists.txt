@@ -6,6 +6,20 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS YES)
 
 add_executable(${PROJECT_NAME} src/main.cpp)
 
-target_compile_options(${PROJECT_NAME} PRIVATE -Wall -Wextra)
+execute_process(
+    COMMAND ${CAPD_PREFIX}/bin/capd-config --cflags
+    OUTPUT_VARIABLE CAPD_CFLAGS )
 
-target_include_directories(${PROJECT_NAME} PRIVATE ${CMAKE_SOURCE_DIR})
+message( "${CAPD_CFLAGS}" )
+
+execute_process(
+    COMMAND ${CAPD_PREFIX}/bin/capd-config --libs
+    OUTPUT_VARIABLE CAPD_LIBS )
+
+message( "${CAPD_LIBS}" )
+
+separate_arguments(CAPD_CFLAGS UNIX_COMMAND "${CAPD_CFLAGS}")
+separate_arguments(CAPD_LIBS UNIX_COMMAND "${CAPD_LIBS}")
+
+target_compile_options(${PROJECT_NAME} PRIVATE -Wall -Wextra ${CAPD_CFLAGS})
+target_link_libraries(${PROJECT_NAME} PRIVATE -static ${CAPD_LIBS})
