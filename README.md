@@ -17,4 +17,4 @@ Enter the repository, create the build folder, configure the repository and then
     cmake .. -CAPD_PREFIX=<capd_prefix>
     make
 
-Above commands will build an example executable. We emphasize that <capd_prefix> is the path to existing CAPD installation.
+The commands above will build an example executable. We emphasize that `<capd_prefix>` is the path to existing CAPD installation.
