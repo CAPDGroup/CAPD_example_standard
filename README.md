@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # CAPD example application
 
 An example CAPD-based project.
