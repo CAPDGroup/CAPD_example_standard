@@ -1,8 +1,11 @@
-# CAPD example project
+<<<<<<< HEAD
+# CAPD example application
 
 An example CAPD-based project.
 
 ## Getting started
+
+In order to perform the build, it is necessary to have CAPD library already installed in your system. 
 
 1. Clone this repository:
 
