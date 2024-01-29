@@ -1,3 +1,23 @@
-Mini-project demonstrating how to compile cmake application that links to CAPD library using capd-config script.
+# CAPD example project
 
-In order to perform the build, it is necessary to set CAPD_PREFIX cmake variable to path to CAPD library installation directory.
+An example CAPD-based project.
+
+## Getting started
+
+1. Clone this repository:
+
+        git clone https://github.com/CAPDGroup/CAPD.example.1
+
+2. Modify `CMakeLists.txt` file so that `CAPD_PREFIX` variable points to an installation directory of CAPD library.
+
+3. Configure and build the project
+
+        mkdir build
+        cd build
+        cmake ..
+        make
+
+4. Run the application
+
+        ./capd_example
+
