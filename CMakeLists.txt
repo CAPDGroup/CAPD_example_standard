@@ -7,5 +7,5 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS YES)
 file(GLOB SOURCES_LIST src/*.cpp)
 add_executable(${PROJECT_NAME} ${SOURCES_LIST})
 
-find_package(Capd REQUIRED)
-target_link_libraries(${PROJECT_NAME} PRIVATE -static Capd::capd)
+find_package(capd REQUIRED)
+target_link_libraries(${PROJECT_NAME} PRIVATE -static capd::capd)
