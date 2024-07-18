@@ -10,13 +10,14 @@ Let CAPD library be installed in `<path>` directory. In order to set up and run 
 
 1. Clone this repository:
 
-        git clone https://github.com/CAPDGroup/CAPD.example.1
+        git clone https://github.com/CAPDGroup/CAPD_example_standard
 
 2. Configure and build the project (the option `-DCMAKE_PREFIX_PATH=<path>` is not necessary if CAPD library is installed in standard directory such as `/usr` or `/usr/local`):
 
-        cd CAPD.example.1
-        cmake -B build -DCMAKE_PREFIX_PATH=<path>
+        cd CAPD_example_standard
+        mkdir build
         cd build
+        cmake .. -DCMAKE_PREFIX_PATH=<path>
         make
 
     The build can be made quicker by using `make -j <n>` instead of `make`, where `<n>` is the number of parallel jobs.
@@ -28,4 +29,4 @@ Let CAPD library be installed in `<path>` directory. In order to set up and run 
 
 ### Source code organization
 
-Source files of the example are placed in `src` directory, with the entry point located in `main.cpp` file. In order to extend your project with multiple source files, no changes in `CMakeLists.txt` file are needed. You just put your source files directly into `src` folder and CMake build system will find them automatically. In order to rebuild your application after introducing changes into the code, it is necessary to call `make` in `build` directory only.
+Source files of the example are placed in `src` directory, with the entry point located in `main.cpp` file. In order to extend your project with multiple source files, no changes in `CMakeLists.txt` file are needed. You just put your source files directly into `src` folder and CMake build system will find them automatically. In order to rebuild your application after introducing changes into the code, it is only necessary to call `make` in `build` directory.
